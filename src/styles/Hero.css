@@ -1,0 +1,223 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: linear-gradient(135deg, var(--color-white) 0%, var(--color-rose-light) 100%);
+  overflow: hidden;
+}
+
+.hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(139, 0, 0, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 209, 220, 0.2) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(139, 0, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+.hero-text {
+  text-align: center;
+  padding: var(--spacing-md);
+}
+
+.hero-ornament {
+  font-size: 3rem;
+  color: var(--color-red-deep);
+  margin-bottom: var(--spacing-sm);
+  opacity: 0.6;
+}
+
+.hero-names {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--color-red-deep);
+  margin-bottom: var(--spacing-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.bride-name,
+.groom-name {
+  display: block;
+}
+
+.ampersand {
+  font-family: var(--font-body);
+  font-size: 0.6em;
+  font-style: italic;
+  color: var(--color-red-accent);
+  margin: 0.2em 0;
+}
+
+.hero-date {
+  font-family: var(--font-accent);
+  font-size: 1.2rem;
+  color: var(--color-text-gray);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-md);
+}
+
+.hero-divider {
+  width: 80px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-red-deep), transparent);
+  margin: var(--spacing-md) auto;
+}
+
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: var(--spacing-md) 0;
+  flex-wrap: wrap;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.countdown-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--color-red-deep);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.countdown-label {
+  font-family: var(--font-accent);
+  font-size: 0.75rem;
+  color: var(--color-text-gray);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.countdown-separator {
+  font-size: 2rem;
+  color: var(--color-red-accent);
+  opacity: 0.4;
+}
+
+.hero-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  color: var(--color-text-gray);
+  font-style: italic;
+  font-weight: 300;
+  margin-top: var(--spacing-md);
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.scroll-arrow {
+  width: 24px;
+  height: 24px;
+  border-left: 2px solid var(--color-red-deep);
+  border-bottom: 2px solid var(--color-red-deep);
+  transform: rotate(-45deg);
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .hero-image-wrapper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-image-wrapper {
+    height: 300px;
+  }
+
+  .countdown {
+    gap: 0.5rem;
+  }
+
+  .countdown-number {
+    font-size: 2rem;
+  }
+
+  .countdown-label {
+    font-size: 0.65rem;
+  }
+
+  .countdown-separator {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-image-wrapper {
+    height: 250px;
+  }
+
+  .hero-names {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .countdown-item {
+    min-width: 60px;
+  }
+}

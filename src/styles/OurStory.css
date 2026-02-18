@@ -1,0 +1,135 @@
+.our-story {
+  background: var(--color-white);
+  position: relative;
+}
+
+.our-story::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 209, 220, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 90% 80%, rgba(255, 228, 232, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.story-content {
+  display: grid;
+  grid-template-columns: 45% 1fr;
+  gap: var(--spacing-lg);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.story-image-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.story-image {
+  width: 100%;
+  height: 100%;
+}
+
+.story-ornament {
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  font-size: 4rem;
+  color: var(--color-red-deep);
+  opacity: 0.3;
+  transform: rotate(25deg);
+}
+
+.story-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.story-paragraph p {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 2;
+  color: var(--color-text-dark);
+  text-align: justify;
+  font-weight: 300;
+}
+
+.story-quote {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-md);
+  border-left: 3px solid var(--color-red-deep);
+  background: var(--color-rose-light);
+  border-radius: 0 8px 8px 0;
+}
+
+.story-quote p {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--color-red-deep);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.quote-author {
+  font-family: var(--font-accent);
+  font-size: 0.9rem;
+  color: var(--color-text-gray);
+  letter-spacing: 1px;
+  display: block;
+  text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .story-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .story-image-wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .story-paragraph p {
+    font-size: 1.05rem;
+    text-align: left;
+  }
+
+  .story-quote p {
+    font-size: 1.1rem;
+  }
+
+  .story-ornament {
+    font-size: 3rem;
+    top: -15px;
+    right: -15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .story-quote {
+    padding: var(--spacing-sm);
+  }
+
+  .story-paragraph p {
+    font-size: 1rem;
+  }
+
+  .story-quote p {
+    font-size: 1rem;
+  }
+}

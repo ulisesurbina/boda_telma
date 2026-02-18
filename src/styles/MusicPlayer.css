@@ -1,0 +1,222 @@
+.music-player {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  transition: all var(--transition-medium);
+}
+
+.music-player.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.music-toggle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 3px solid var(--color-red-deep);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-lg);
+}
+
+.music-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 40px rgba(139, 0, 0, 0.25);
+}
+
+.music-toggle.playing {
+  background: var(--color-red-deep);
+  border-color: var(--color-red-deep);
+}
+
+.music-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Icono de Play */
+.play-triangle {
+  width: 0;
+  height: 0;
+  border-left: 16px solid var(--color-red-deep);
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  margin-left: 4px;
+}
+
+.music-toggle.playing .play-triangle {
+  border-left-color: var(--color-white);
+}
+
+/* Icono de Pausa */
+.pause-bar {
+  width: 5px;
+  height: 20px;
+  background: var(--color-white);
+  border-radius: 2px;
+}
+
+/* Ondas de sonido animadas */
+.sound-waves {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  pointer-events: none;
+}
+
+.wave {
+  width: 3px;
+  background: var(--color-white);
+  border-radius: 2px;
+  animation: wave-animation 1s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.wave:nth-child(1) {
+  height: 10px;
+  animation-delay: 0s;
+}
+
+.wave:nth-child(2) {
+  height: 16px;
+  animation-delay: 0.2s;
+}
+
+.wave:nth-child(3) {
+  height: 12px;
+  animation-delay: 0.4s;
+}
+
+@keyframes wave-animation {
+  0%, 100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
+}
+
+/* Información de la canción */
+.music-info {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background: var(--color-white);
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all var(--transition-medium);
+  white-space: nowrap;
+  border: 1px solid var(--color-pearl-dark);
+}
+
+.music-player:hover .music-info {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.song-title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-red-deep);
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.artist-name {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  color: var(--color-text-gray);
+  letter-spacing: 0.5px;
+}
+
+/* Efecto de pulso cuando está reproduciendo */
+.music-toggle.playing::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border-radius: 50%;
+  border: 2px solid var(--color-red-deep);
+  opacity: 0;
+  animation: pulse 2s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .music-player {
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .music-toggle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .music-info {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(100% + 0.5rem);
+  }
+
+  .music-player:hover .music-info {
+    transform: translate(-50%, -5px);
+  }
+}
+
+@media (max-width: 480px) {
+  .music-player {
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .music-toggle {
+    width: 55px;
+    height: 55px;
+  }
+
+  .song-title {
+    font-size: 0.9rem;
+  }
+
+  .artist-name {
+    font-size: 0.75rem;
+  }
+}

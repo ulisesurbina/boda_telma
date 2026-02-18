@@ -1,0 +1,199 @@
+.gift-registry {
+  background: var(--color-white);
+  position: relative;
+}
+
+.gift-registry::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(circle at 70% 30%, rgba(255, 228, 232, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.registry-intro {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-lg);
+  text-align: center;
+}
+
+.registry-message {
+  font-family: var(--font-body);
+  font-size: 1.15rem;
+  line-height: 2;
+  color: var(--color-text-gray);
+  font-weight: 300;
+}
+
+.registry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.registry-card {
+  background: var(--color-white);
+  padding: var(--spacing-lg);
+  border-radius: 16px;
+  border: 3px solid var(--color-red-deep);
+  text-align: center;
+  transition: all var(--transition-medium);
+  box-shadow: var(--shadow-sm);
+}
+
+.registry-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-red-accent);
+}
+
+.registry-icon {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.registry-store {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-red-deep);
+  margin-bottom: var(--spacing-md);
+  font-weight: 400;
+}
+
+.registry-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: var(--spacing-md);
+  padding: var(--spacing-sm);
+  background: var(--color-pearl-gray);
+  border-radius: 8px;
+}
+
+.registry-label {
+  font-family: var(--font-accent);
+  font-size: 0.85rem;
+  color: var(--color-text-gray);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.registry-code {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-red-deep);
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.registry-btn {
+  width: 100%;
+}
+
+.registry-alternative {
+  max-width: 600px;
+  margin: var(--spacing-xl) auto 0;
+  padding: var(--spacing-lg);
+  background: linear-gradient(135deg, var(--color-rose-light) 0%, var(--color-rose-medium) 100%);
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid var(--color-red-deep);
+  position: relative;
+  overflow: hidden;
+}
+
+.registry-alternative::before {
+  content: '❦';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  font-size: 8rem;
+  color: var(--color-red-deep);
+  opacity: 0.1;
+  transform: rotate(15deg);
+}
+
+.alternative-icon {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.alternative-title {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-red-deep);
+  margin-bottom: var(--spacing-sm);
+  font-weight: 400;
+  position: relative;
+  z-index: 1;
+}
+
+.alternative-text {
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--color-text-dark);
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .registry-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .registry-card {
+    padding: var(--spacing-md);
+  }
+
+  .registry-message {
+    font-size: 1.05rem;
+  }
+
+  .registry-icon {
+    font-size: 3.5rem;
+  }
+
+  .registry-store {
+    font-size: 1.7rem;
+  }
+
+  .alternative-title {
+    font-size: 1.7rem;
+  }
+
+  .alternative-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .registry-card {
+    padding: var(--spacing-sm);
+  }
+
+  .registry-alternative {
+    padding: var(--spacing-md);
+  }
+
+  .registry-icon {
+    font-size: 3rem;
+  }
+
+  .alternative-icon {
+    font-size: 3rem;
+  }
+}
