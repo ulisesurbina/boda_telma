@@ -82,7 +82,7 @@ function App() {
       <Godparents />
       <DressCode />
       <Venues />
-      <Timeline />
+      {/* <Timeline /> */}
       <Gallery />
       <GiftRegistry />
       <Footer />

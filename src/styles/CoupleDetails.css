@@ -1,31 +1,91 @@
 .couple-details {
-  background: linear-gradient(180deg, var(--color-pearl-gray) 0%, var(--color-white) 100%);
-  position: relative;
+  background: linear-gradient(
+    180deg,
+    var(--color-pearl-gray) 0%,
+    var(--color-white) 100%
+  );
+  padding: 4rem 1.5rem;
 }
 
-.couple-grid {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  gap: var(--spacing-lg);
-  align-items: center;
+/* CARD PRINCIPAL */
+.couple-unified-card {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-md);
   max-width: 1100px;
   margin: 0 auto;
-}
-
-.couple-card {
-  background: var(--color-white);
-  border-radius: 16px;
-  padding: var(--spacing-md);
-  box-shadow: var(--shadow-md);
   position: relative;
   transition: all var(--transition-medium);
 }
 
-.couple-card:hover {
-  transform: translateY(-10px);
+.couple-unified-card:hover {
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
 }
 
+/* Layout horizontal */
+.couple-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+/* FOTO */
+.couple-photo-wrapper {
+  flex: 1;
+  /* max-width: 450px; */
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.couple-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXTO */
+.couple-text {
+  flex: 1;
+  text-align: center;
+}
+
+.bride-name,
+.groom-name {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--color-red-deep);
+  font-weight: 400;
+  margin: 0;
+}
+
+.heart-divider {
+  font-size: 3.5rem;
+  color: var(--color-red-deep);
+  margin: 1rem 0;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+}
+
+.couple-message {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-text-gray);
+  font-weight: 300;
+  margin-top: 1.5rem;
+}
+
+/* ORNAMENTOS */
 .card-ornament {
   position: absolute;
   font-size: 2.5rem;
@@ -45,131 +105,79 @@
   transform: rotate(-15deg);
 }
 
-.couple-image-wrapper {
-  width: 100%;
-  aspect-ratio: 3/4;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: var(--spacing-md);
-  box-shadow: var(--shadow-sm);
-}
+/* ========================= */
+/* RESPONSIVE REAL */
+/* ========================= */
 
-.couple-image {
-  width: 100%;
-  height: 100%;
-}
-
-.couple-info {
-  text-align: center;
-}
-
-.couple-name {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--color-red-deep);
-  margin-bottom: 0.5rem;
-  font-weight: 400;
-}
-
-.couple-role {
-  font-family: var(--font-accent);
-  font-size: 0.9rem;
-  color: var(--color-red-accent);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  display: block;
-  margin-bottom: var(--spacing-sm);
-}
-
-.couple-bio {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  line-height: 1.8;
-  color: var(--color-text-gray);
-  text-align: center;
-  font-weight: 300;
-}
-
-/* Corazón central */
-.couple-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 var(--spacing-md);
-}
-
-.heart-icon {
-  font-size: 4rem;
-  color: var(--color-red-deep);
-  animation: heartbeat 2s ease-in-out infinite;
-}
-
-@keyframes heartbeat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  25% {
-    transform: scale(1.1);
-  }
-  50% {
-    transform: scale(1);
-  }
-}
-
-/* Responsive */
+/* Tablet */
 @media (max-width: 1024px) {
-  .couple-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-md);
-    max-width: 600px;
+  .couple-unified-card {
+    padding: 2.5rem;
   }
 
-  .couple-divider {
-    order: 2;
-    padding: var(--spacing-sm) 0;
+  .couple-content {
+    gap: 2rem;
   }
 
-  .bride-card {
-    order: 1;
-  }
-
-  .groom-card {
-    order: 3;
-  }
-
-  .heart-icon {
-    font-size: 3rem;
+  .bride-name,
+  .groom-name {
+    font-size: 1.9rem;
   }
 }
 
-@media (max-width: 768px) {
-  .couple-card {
-    padding: var(--spacing-sm);
+/* Tablet vertical / móvil grande */
+@media (max-width: 900px) {
+  .couple-content {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .couple-name {
+  .couple-photo-wrapper {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .couple-photo {
+    height: 420px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .couple-unified-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .couple-photo {
+    height: 320px;
+  }
+
+  .bride-name,
+  .groom-name {
     font-size: 1.6rem;
   }
 
-  .couple-bio {
-    font-size: 0.95rem;
+  .heart-divider {
+    font-size: 2.8rem;
   }
 
-  .card-ornament {
-    font-size: 2rem;
+  .couple-message {
+    font-size: 0.95rem;
   }
 }
 
-@media (max-width: 480px) {
-  .couple-name {
+/* Móvil pequeño */
+@media (max-width: 400px) {
+  .couple-photo {
+    height: 260px;
+  }
+
+  .bride-name,
+  .groom-name {
     font-size: 1.4rem;
   }
 
-  .couple-role {
-    font-size: 0.8rem;
-  }
-
-  .couple-bio {
+  .couple-message {
     font-size: 0.9rem;
   }
 }
