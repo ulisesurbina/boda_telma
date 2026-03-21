@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Hero.css';
+import boda3 from '../assets/boda3.jpg';
 
 const Hero = () => {
+  const [loaded, setLoaded] = useState(false);
   // Configuración de la boda
   const weddingDate = new Date('2026-05-16T15:00:00');
   const brideName = 'Telma';
@@ -44,7 +46,12 @@ const Hero = () => {
       <div className="hero-content container">
         {/* Imagen principal con skeleton */}
         <div className="hero-image-wrapper fade-in delay-1">
-          <div className="hero-image skeleton"></div>
+          <img 
+            src={boda3}
+            alt="Telma y Mauricio"
+            className={`hero-image ${loaded ? 'loaded' : 'skeleton'}`}
+            onLoad={() => setLoaded(true)}
+          />
           <div className="hero-image-overlay"></div>
         </div>
 
