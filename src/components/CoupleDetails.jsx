@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/CoupleDetails.css';
-import boda from '../../public/imgs/test1.webp';
+import boda from '../assets/test1.webp';
 
 const CoupleDetails = () => {
   return (
