@@ -19,7 +19,7 @@ const CoupleDetails = () => {
             {/* FOTO */}
             <div className="couple-photo-wrapper">
               <img 
-                src="../../public/test1.webp"
+                src="../../public/imgs/test1.webp"
                 alt="Telma y Mauricio"
                 className="couple-photo"
               />
