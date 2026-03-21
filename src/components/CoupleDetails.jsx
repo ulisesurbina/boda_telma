@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/CoupleDetails.css';
+import boda from '../../public/imgs/test1.webp';
 
 const CoupleDetails = () => {
   return (
@@ -19,7 +20,7 @@ const CoupleDetails = () => {
             {/* FOTO */}
             <div className="couple-photo-wrapper">
               <img 
-                src="../../public/imgs/test1.webp"
+                src={boda}
                 alt="Telma y Mauricio"
                 className="couple-photo"
               />
