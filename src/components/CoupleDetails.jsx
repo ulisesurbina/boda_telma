@@ -17,7 +17,6 @@ const CoupleDetails = () => {
 
           <div className="couple-content">
 
-            {/* FOTO */}
             <div className="couple-photo-wrapper">
               <img 
                 src={boda5}
@@ -26,7 +25,6 @@ const CoupleDetails = () => {
               />
             </div>
 
-            {/* TEXTO */}
             <div className="couple-text">
               <h3 className="bride-name">
                 Telma Lizeth Casas Tlatuani

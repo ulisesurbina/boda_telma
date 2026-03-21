@@ -40,11 +40,9 @@ const Hero = () => {
 
   return (
     <section className="hero">
-      {/* Patrón de fondo decorativo */}
       <div className="hero-pattern"></div>
       
       <div className="hero-content container">
-        {/* Imagen principal con skeleton */}
         <div className="hero-image-wrapper fade-in delay-1">
           <img 
             src={boda3}
@@ -55,7 +53,6 @@ const Hero = () => {
           <div className="hero-image-overlay"></div>
         </div>
 
-        {/* Contenido principal */}
         <div className="hero-text">
           <div className="hero-ornament fade-in-up delay-2">❦</div>
           
@@ -71,7 +68,6 @@ const Hero = () => {
 
           <div className="hero-divider fade-in delay-5"></div>
 
-          {/* Cuenta regresiva */}
           <div className="countdown fade-in-up delay-6">
             <div className="countdown-item">
               <span className="countdown-number">{timeLeft.days}</span>
@@ -100,7 +96,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <div className="scroll-indicator fade-in delay-8">
         <div className="scroll-arrow"></div>
       </div>
