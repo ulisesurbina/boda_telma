@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/GiftRegistry.css';
+import logo from '../assets/logoTM.png';
 
 const GiftRegistry = () => {
   const registries = [
@@ -22,13 +23,12 @@ const GiftRegistry = () => {
   };
 
   return (
-    <section className="gift-registry" id="regalos">
+    <section className="gift-registry floral-container" id="regalos">
       <div className="container">
         <h2 className="section-title">Mesa de Regalos</h2>
-        <p className="section-subtitle">Tu presencia es nuestro mejor regalo</p>
-
         <div className="registry-intro">
           <p className="registry-message">
+            Tu presencia es nuestro mejor regalo <br />
             Si deseas hacernos un obsequio, hemos creado mesas de regalos en las siguientes tiendas. 
             Tu generosidad nos ayudará a comenzar nuestra vida juntos con todo lo que necesitamos 
             para hacer de nuestra casa un hogar lleno de amor.
@@ -57,7 +57,9 @@ const GiftRegistry = () => {
         </div>
 
         <div className="registry-alternative">
-          <div className="alternative-icon">💝</div>
+          <div className="alternative-icon">
+             <img src={logo} alt="Save the date" className="ornament-image" />
+          </div>
           <h3 className="alternative-title">Lluvia de Sobres</h3>
           <p className="alternative-text">
             Si prefieres hacernos un regalo en efectivo, habrá una lluvia de sobres 

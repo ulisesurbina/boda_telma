@@ -36,7 +36,7 @@ const Footer = () => {
               © {currentYear} Telma & Mauricio. Todos los derechos reservados.
             </p>
             <p className="footer-credits">
-              Hecho con amor y dedicación ❤️
+              Hecho con amor y dedicación por <a className='lnProfile' href="https://github.com/ulisesurbina" target="_blank" rel="noopener noreferrer">U.U.M.</a> ❤️
             </p>
           </div>
         </div>

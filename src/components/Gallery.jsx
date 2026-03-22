@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import '../styles/Gallery.css';
 
 import boda1 from '../assets/boda1.jpg';
@@ -38,7 +38,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="gallery" id="galeria">
+    <section className="gallery floral-container" id="galeria">
       <div className="container">
         <h2 className="section-title">Galería</h2>
         <p className="section-subtitle">Momentos que atesoramos</p>

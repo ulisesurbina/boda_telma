@@ -65,7 +65,7 @@
 }
 
 .story-quote {
-  margin-top: var(--spacing-md);
+  /* margin-top: var(--spacing-md); */
   padding: var(--spacing-md);
   border-left: 3px solid var(--color-red-deep);
   background: var(--color-rose-light);

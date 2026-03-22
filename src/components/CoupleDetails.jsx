@@ -4,7 +4,7 @@ import boda5 from '../assets/boda5.jpg';
 
 const CoupleDetails = () => {
   return (
-    <section className="couple-details" id="novios">
+    <section className="couple-details floral-container" id="novios">
       <div className="container">
         <h2 className="section-title">Nosotros</h2>
         <p className="section-subtitle">

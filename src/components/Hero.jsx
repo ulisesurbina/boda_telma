@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Hero.css';
 import boda3 from '../assets/boda3.jpg';
+import logo from '../assets/logoTM.png';
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
-  // Configuración de la boda
   const weddingDate = new Date('2026-05-16T15:00:00');
   const brideName = 'Telma';
   const groomName = 'Mauricio';
   
-  // Estado para cuenta regresiva
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -17,11 +16,9 @@ const Hero = () => {
     seconds: 0
   });
 
-  // Actualizar cuenta regresiva
   useEffect(() => {
     const calculateTimeLeft = () => {
       const difference = weddingDate - new Date();
-      
       if (difference > 0) {
         setTimeLeft({
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
@@ -34,14 +31,12 @@ const Hero = () => {
 
     calculateTimeLeft();
     const timer = setInterval(calculateTimeLeft, 1000);
-
     return () => clearInterval(timer);
   }, []);
 
   return (
     <section className="hero">
       <div className="hero-pattern"></div>
-      
       <div className="hero-content container">
         <div className="hero-image-wrapper fade-in delay-1">
           <img 
@@ -54,7 +49,9 @@ const Hero = () => {
         </div>
 
         <div className="hero-text">
-          <div className="hero-ornament fade-in-up delay-2">❦</div>
+          <div className="hero-ornament fade-in-up delay-2">
+            <img src={logo} alt="Save the date" className="ornament-image" />
+          </div>
           
           <h1 className="hero-names fade-in-up delay-3">
             <span className="bride-name">{brideName}</span>

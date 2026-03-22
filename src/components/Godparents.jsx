@@ -13,7 +13,7 @@ const Godparents = () => {
   ];
 
   return (
-    <section className="godparents" id="padrinos">
+    <section className="godparents floral-container" id="padrinos">
       <div className="container">
         <h2 className="section-title">Padres</h2>
         <p className="section-subtitle">Quienes nos acompañan en este día especial</p>

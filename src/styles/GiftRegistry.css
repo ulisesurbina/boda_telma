@@ -29,6 +29,14 @@
   font-weight: 300;
 }
 
+.ornament-image {
+  width: 30%;
+  max-width: 50%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .registry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
