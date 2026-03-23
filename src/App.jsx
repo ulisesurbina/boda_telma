@@ -9,6 +9,7 @@ import Venues from './components/Venues';
 import Timeline from './components/Timeline';
 import Gallery from './components/Gallery';
 import GiftRegistry from './components/GiftRegistry';
+import Register from './components/Register';
 import Footer from './components/Footer';
 import './styles/global.css';
 
@@ -83,6 +84,7 @@ function App() {
       {/* <Timeline /> */}
       <Gallery />
       <GiftRegistry />
+      <Register />
       <Footer />
     </div>
   );

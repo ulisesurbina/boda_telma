@@ -219,7 +219,7 @@ section {
   text-align: center;
   /* margin-bottom: var(--spacing-md); */
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 
 .section-subtitle {
