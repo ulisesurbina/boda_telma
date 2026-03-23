@@ -72,10 +72,8 @@ function App() {
 
   return (
     <div className="App">
-      {/* Reproductor de música flotante */}
       <MusicPlayer />
       
-      {/* Secciones de la página */}
       <Hero />
       <OurStory />
       <CoupleDetails />

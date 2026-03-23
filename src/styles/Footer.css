@@ -170,7 +170,11 @@
 
   .footer-names {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0rem;
+  }
+
+  .footer-ornament {
+    margin-bottom: 0;
   }
 
   .footer-names span {
