@@ -1,48 +1,68 @@
-import React, { useState } from 'react';
-import '../styles/Register.css';
+import React, { useState } from "react";
+import "../styles/Register.css";
 
 const Register = () => {
   const [form, setForm] = useState({
-    nombre: '',
-    asistencia: '',
-    invitados: '',
-    mensaje: ''
+    nombre: "",
+    asistencia: "",
+    invitados: "",
+    mensaje: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    if (name === 'invitados') {
-    if (value === '' || Number(value) >= 0) {
-        setForm(prev => ({
-            ...prev,
-            [name]: value
+    if (name === "invitados") {
+      if (value === "" || Number(value) >= 0) {
+        setForm((prev) => ({
+          ...prev,
+          [name]: value,
         }));
-        }
-        return;
+      }
+      return;
     }
-    setForm(prev => ({
+    setForm((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const dataToSend = {
-        ...form,
-        invitados: form.invitados === '' ? 0 : Number(form.invitados)
+      ...form,
+      invitados: form.invitados === "" ? 0 : Number(form.invitados),
     };
 
-   console.log(dataToSend);
+    // console.log(dataToSend);
 
-    alert('¡Gracias por confirmar tu asistencia!');
-    
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbx0xzHDwTJo6lqzo8BNfQ9D-_xMy3hNgIL14lKuw6XMdUzMEusblH8Pyzo-Vm7yCnBCnA/exec", {
+        method: "POST",
+        body: JSON.stringify(dataToSend),
+        mode: 'no-cors',
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      setForm({
+        nombre: "",
+        asistencia: "",
+        invitados: "",
+        mensaje: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Hubo un error, intenta de nuevo");
+    }
+
+    alert("¡Gracias por confirmar tu asistencia!");
+
     setForm({
-      nombre: '',
-      asistencia: '',
-      invitados: '',
-      mensaje: ''
+      nombre: "",
+      asistencia: "",
+      invitados: "",
+      mensaje: "",
     });
   };
 
@@ -50,10 +70,11 @@ const Register = () => {
     <section className="rsvp floral-container" id="rsvp">
       <div className="container">
         <h2 className="section-title">Confirma tu asistencia</h2>
-        <p className="section-subtitle">Nos encantará compartir este día contigo</p>
+        <p className="section-subtitle">
+          Nos encantará compartir este día contigo
+        </p>
 
         <form className="rsvp-form" onSubmit={handleSubmit}>
-          
           <input
             type="text"
             name="nombre"
@@ -90,7 +111,7 @@ const Register = () => {
             onChange={handleChange}
           />
 
-          <button className='btn btn-primary' type="submit">
+          <button className="btn btn-primary" type="submit">
             Confirmar
           </button>
         </form>

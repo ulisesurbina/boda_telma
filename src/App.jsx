@@ -26,7 +26,6 @@ function App() {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           
-          // Agregar animaciones a los hijos
           const children = entry.target.querySelectorAll('.fade-in-up, .fade-in, .scale-in');
           children.forEach((child, index) => {
             setTimeout(() => {
@@ -37,7 +36,6 @@ function App() {
       });
     }, observerOptions);
 
-    // Observar todas las secciones
     const sections = document.querySelectorAll('section');
     sections.forEach(section => {
       observer.observe(section);
@@ -50,7 +48,6 @@ function App() {
     };
   }, []);
 
-  // Smooth scroll para los enlaces internos
   useEffect(() => {
     const handleClick = (e) => {
       const target = e.target.closest('a[href^="#"]');
