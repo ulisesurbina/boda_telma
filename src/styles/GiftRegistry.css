@@ -29,14 +29,6 @@
   font-weight: 300;
 }
 
-.ornament-image {
-  width: 30%;
-  max-width: 50%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
 .registry-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -106,57 +98,6 @@
   width: 100%;
 }
 
-.registry-alternative {
-  max-width: 600px;
-  margin: var(--spacing-xl) auto 0;
-  padding: var(--spacing-lg);
-  background: linear-gradient(135deg, var(--color-rose-light) 0%, var(--color-rose-medium) 100%);
-  border-radius: 16px;
-  text-align: center;
-  border: 2px solid var(--color-red-deep);
-  position: relative;
-  overflow: hidden;
-}
-
-.registry-alternative::before {
-  content: '❦';
-  position: absolute;
-  top: -20px;
-  right: -20px;
-  font-size: 8rem;
-  color: var(--color-red-deep);
-  opacity: 0.1;
-  transform: rotate(15deg);
-}
-
-.alternative-icon {
-  font-size: 3.5rem;
-  margin-bottom: var(--spacing-sm);
-  position: relative;
-  z-index: 1;
-}
-
-.alternative-title {
-  font-family: var(--font-display);
-  font-size: 2rem;
-  color: var(--color-red-deep);
-  margin-bottom: var(--spacing-sm);
-  font-weight: 400;
-  position: relative;
-  z-index: 1;
-}
-
-.alternative-text {
-  font-family: var(--font-body);
-  font-size: 1.1rem;
-  line-height: 1.8;
-  color: var(--color-text-dark);
-  font-weight: 300;
-  position: relative;
-  z-index: 1;
-}
-
-/* Responsive */
 @media (max-width: 768px) {
   .registry-grid {
     grid-template-columns: 1fr;
@@ -178,27 +119,11 @@
   .registry-store {
     font-size: 1.7rem;
   }
-
-  .alternative-title {
-    font-size: 1.7rem;
-  }
-
-  .alternative-text {
-    font-size: 1rem;
-  }
 }
 
 @media (max-width: 480px) {
   .registry-card {
     padding: var(--spacing-sm);
-  }
-
-  .registry-alternative {
-    padding: var(--spacing-md);
-  }
-
-  .registry-icon {
-    font-size: 3rem;
   }
 
   .alternative-icon {

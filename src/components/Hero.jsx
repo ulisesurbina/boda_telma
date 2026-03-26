@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Hero.css';
-import boda3 from '../assets/boda3.jpg';
+import boda22 from '../assets/boda22.png';
 import logo from '../assets/logoTM.png';
 
 const Hero = () => {
@@ -40,7 +40,7 @@ const Hero = () => {
       <div className="hero-content container">
         <div className="hero-image-wrapper fade-in delay-1">
           <img 
-            src={boda3}
+            src={boda22}
             alt="Telma y Mauricio"
             className={`hero-image ${loaded ? 'loaded' : 'skeleton'}`}
             onLoad={() => setLoaded(true)}
@@ -49,9 +49,9 @@ const Hero = () => {
         </div>
 
         <div className="hero-text">
-          <div className="hero-ornament fade-in-up delay-2">
+          {/* <div className="hero-ornament fade-in-up delay-2">
             <img src={logo} alt="Save the date" className="ornament-image" />
-          </div>
+          </div> */}
           
           <h1 className="hero-names fade-in-up delay-3">
             <span className="bride-name">{brideName}</span>

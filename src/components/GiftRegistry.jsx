@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/GiftRegistry.css';
-import logo from '../assets/logoTM.png';
 
 const GiftRegistry = () => {
   const registries = [
@@ -54,17 +53,6 @@ const GiftRegistry = () => {
               </button>
             </div>
           ))}
-        </div>
-
-        <div className="registry-alternative">
-          <div className="alternative-icon">
-             <img src={logo} alt="Save the date" className="ornament-image" />
-          </div>
-          <h3 className="alternative-title">Lluvia de Sobres</h3>
-          <p className="alternative-text">
-            Si prefieres hacernos un regalo en efectivo, habrá una lluvia de sobres 
-            durante la recepción. Tu apoyo significa mucho para nosotros.
-          </p>
         </div>
       </div>
     </section>

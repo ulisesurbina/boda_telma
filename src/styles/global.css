@@ -7,13 +7,13 @@
   --color-rose-medium: #FFD1DC;
   --color-pearl-gray: #F5F5F5;
   --color-pearl-dark: #E8E8E8;
-  --color-text-dark: #2C2C2C;
-  --color-text-gray: #6B6B6B;
+  --color-text-dark: #000000;
+  --color-text-gray: #000000;
   
   /* Tipografía */
-  --font-display: 'Italiana', serif;
+  --font-display: 'Cormorant Garamond', serif;
   --font-body: 'Cormorant Garamond', serif;
-  --font-accent: 'Tenor Sans', sans-serif;
+  --font-accent: 'Cormorant Garamond', serif;
   
   /* Espaciado */
   --spacing-xs: 0.5rem;
@@ -218,14 +218,14 @@ section {
   color: var(--color-red-deep);
   text-align: center;
   /* margin-bottom: var(--spacing-md); */
-  font-weight: 400;
+  font-weight: 600;
   letter-spacing: 1px;
 }
 
 .section-subtitle {
   font-family: var(--font-body);
   font-size: 1.2rem;
-  color: var(--color-text-gray);
+  color: var(--color-text-dark);
   text-align: center;
   margin-bottom: var(--spacing-md);
   font-style: italic;

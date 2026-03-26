@@ -167,7 +167,7 @@ Cambia la URL de Google Fonts por las que prefieras:
 :root {
   --font-display: 'Italiana', serif;        /* ⬅️ Títulos grandes */
   --font-body: 'Cormorant Garamond', serif; /* ⬅️ Texto normal */
-  --font-accent: 'Tenor Sans', sans-serif;  /* ⬅️ Acentos */
+  --font-accent: 'Cormorant Garamond', serif;  /* ⬅️ Acentos */
 }
 ```
 

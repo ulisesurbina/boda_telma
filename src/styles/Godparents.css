@@ -23,6 +23,20 @@
   z-index: 1;
 }
 
+.dresscode-image-wrapper {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.dresscode-image-wrapper img {
+  width: 100%;
+  max-width: 400px;
+  object-fit: cover;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.1));
+  -webkit-filter: drop-shadow(0 10px 25px rgba(0,0,0,0.1));
+}
+
 .godparent-card {
   background: var(--color-white);
   border-radius: 12px;

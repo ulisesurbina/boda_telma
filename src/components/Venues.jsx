@@ -1,12 +1,14 @@
 import React from 'react';
 import '../styles/Venues.css';
+import iglesia from '../assets/iglesia.png'
+import recepcion from '../assets/recepcion.png'
 
 const Venues = () => {
   const ceremony = {
     title: 'Ceremonia Religiosa',
     venue: 'Iglesia de San Bartolome',
     address: 'Ignacio Zaragoza 78P, San Bartolo, 54784 San Bartolo, EDOMEX',
-    time: '18:00 hrs',
+    time: '14:00 hrs',
     mapsUrl: 'https://maps.app.goo.gl/VpPBcVwxrZyjtfpF8'
   };
 
@@ -14,7 +16,7 @@ const Venues = () => {
     title: 'Recepción',
     venue: 'Calle Pino San Bartolo',
     address: 'Calle Pino S/N San Bartolo Teoloyucan, EDOMEX',
-    time: '20:00 hrs',
+    time: '15:00 hrs',
     mapsUrl: 'https://maps.app.goo.gl/w2zjxtgDN1revLKj8'
   };
 
@@ -34,7 +36,9 @@ const Venues = () => {
             <div className="venue-image-wrapper">
               <div className="venue-image skeleton"></div>
               <div className="venue-overlay">
-                <div className="venue-icon">⛪</div>
+                <div className="venue-icon">
+                  <img src={iglesia} alt="Iglesia" />
+                </div>
               </div>
             </div>
 
@@ -74,7 +78,9 @@ const Venues = () => {
             <div className="venue-image-wrapper">
               <div className="venue-image skeleton"></div>
               <div className="venue-overlay">
-                <div className="venue-icon">🏛️</div>
+                <div className="venue-icon">
+                   <img src={recepcion} alt="Recepción" />
+                </div>
               </div>
             </div>
 
