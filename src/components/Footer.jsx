@@ -38,7 +38,7 @@ const Footer = () => {
               © {currentYear} Telma & Mauricio. Todos los derechos reservados.
             </p>
             <p className="footer-credits">
-              Hecho con amor y dedicación por <a className='lnProfile' href="https://github.com/ulisesurbina" target="_blank" rel="noopener noreferrer">U.U.M.</a> ❤️
+              Hecho con amor y dedicación por <a className='lnProfile' href="https://wa.me/5554369655?text=Hola%20quiero%20contactarte%20por%20la%20invitacion%20de%20la%20boda%20de%20Telma" target="_blank" rel="noopener noreferrer">U.U.M.</a> ❤️
             </p>
           </div>
         </div>
