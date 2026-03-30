@@ -5,7 +5,7 @@ import boda5 from '../assets/boda5.jpg';
 const CoupleDetails = () => {
   return (
     <section className="couple-details floral-container" id="novios">
-      <div className="container">
+      <div className="container margenRed">
         <h2 className="section-title">Nosotros</h2>
         <p className="section-subtitle">
           Quienes se unen en matrimonio

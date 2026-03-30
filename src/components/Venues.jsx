@@ -26,7 +26,7 @@ const Venues = () => {
 
   return (
     <section className="venues floral-container" id="ubicacion">
-      <div className="container">
+      <div className="container margenRed">
         <h2 className="section-title">Ceremonia & Recepción</h2>
         <p className="section-subtitle">Dónde celebraremos nuestro amor</p>
 

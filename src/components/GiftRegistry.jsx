@@ -23,7 +23,7 @@ const GiftRegistry = () => {
 
   return (
     <section className="gift-registry floral-container" id="regalos">
-      <div className="container">
+      <div className="container margenRed">
         <h2 className="section-title">Mesa de Regalos</h2>
         <div className="registry-intro">
           <p className="registry-message">

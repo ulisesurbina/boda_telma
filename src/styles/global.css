@@ -58,6 +58,11 @@ body {
   padding: 20px;
 }
 
+.margenRed {
+  border: 20px solid transparent;
+  border-image: url('../assets/margen.png') 50 round;
+}
+
 /* Animaciones de entrada */
 @keyframes fadeInUp {
   from {

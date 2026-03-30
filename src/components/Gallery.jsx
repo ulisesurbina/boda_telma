@@ -54,7 +54,7 @@ const Gallery = () => {
 
   return (
     <section className="gallery floral-container" id="galeria">
-      <div className="container">
+      <div className="container margenRed">
         <h2 className="section-title">Galería</h2>
         <p className="section-subtitle">Momentos que atesoramos</p>
 

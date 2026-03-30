@@ -68,7 +68,7 @@ const Register = () => {
 
   return (
     <section className="rsvp floral-container" id="rsvp">
-      <div className="container">
+      <div className="container margenRed">
         <h2 className="section-title">Confirma tu asistencia</h2>
         <p className="section-subtitle">
           Nos encantará compartir este día contigo

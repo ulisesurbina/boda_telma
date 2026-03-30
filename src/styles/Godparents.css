@@ -5,11 +5,6 @@
   z-index: 1;
 }
 
-.margenRed {
-  border: 20px solid transparent;
-  border-image: url('../assets/margen.png') 50 round;
-}
-
 .godparents::before {
   content: '';
   position: absolute;

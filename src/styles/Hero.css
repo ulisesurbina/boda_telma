@@ -1,4 +1,11 @@
+@media (prefers-color-scheme: dark) {
+  .hero-banner {
+    background: linear-gradient(135deg, #ffffff 0%, #ffe4e9 100%) !important;
+  }
+}
+
 .hero {
+  color-scheme: light;
   min-height: 100dvh;
   display: flex;
   align-items: center;

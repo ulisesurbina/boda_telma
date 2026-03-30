@@ -43,10 +43,14 @@
   background: var(--color-white);
   padding: var(--spacing-lg);
   border-radius: 16px;
-  border: 3px solid var(--color-red-deep);
   text-align: center;
-  transition: all var(--transition-medium);
   box-shadow: var(--shadow-sm);
+  transition: all var(--transition-medium);
+  -webkit-transition: all var(--transition-medium);
+  -moz-transition: all var(--transition-medium);
+  -ms-transition: all var(--transition-medium);
+  -o-transition: all var(--transition-medium);
+  border: 3px solid var(--color-red-deep);
 }
 
 .registry-card:hover {
@@ -122,6 +126,10 @@
 }
 
 @media (max-width: 480px) {
+  .registry-grid {
+    grid-template-columns: 100%;
+  }
+  
   .registry-card {
     padding: var(--spacing-sm);
   }
