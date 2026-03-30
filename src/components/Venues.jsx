@@ -14,7 +14,7 @@ const Venues = () => {
 
   const reception = {
     title: 'Recepción',
-    venue: 'Calle Pino San Bartolo',
+    venue: 'Jardin de Eventos Mauro Casas',
     address: 'Calle Pino S/N San Bartolo Teoloyucan, EDOMEX',
     time: '15:00 hrs',
     mapsUrl: 'https://maps.app.goo.gl/w2zjxtgDN1revLKj8'

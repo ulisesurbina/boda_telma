@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Hero.css';
 import boda22 from '../assets/boda22.png';
-import logo from '../assets/logoTM.png';
+import bannerSec from '../assets/bannerSecundario.png';
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
   const weddingDate = new Date('2026-05-16T15:00:00');
-  const brideName = 'Telma';
-  const groomName = 'Mauricio';
+  // const brideName = 'Telma';
+  // const groomName = 'Mauricio';
   
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -53,15 +53,22 @@ const Hero = () => {
             <img src={logo} alt="Save the date" className="ornament-image" />
           </div> */}
           
-          <h1 className="hero-names fade-in-up delay-3">
+          {/* <h1 className="hero-names fade-in-up delay-3">
             <span className="bride-name">{brideName}</span>
             <span className="ampersand">&</span>
             <span className="groom-name">{groomName}</span>
-          </h1>
+          </h1> */}
 
-          <p className="hero-date fade-in-up delay-4">
+          {/* <p className="hero-date fade-in-up delay-4">
             16 de Mayo, 2026
-          </p>
+          </p> */}
+
+          <img
+            src={bannerSec}
+            alt="Telma y Mauricio"
+            className="hero-banner fade-in-up delay-3"
+          />
+
 
           <div className="hero-divider fade-in delay-5"></div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Godparents.css';
+import margen from '../assets/margen.png';
 
 const Godparents = () => {
   const godparents = [

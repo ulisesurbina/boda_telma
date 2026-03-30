@@ -135,6 +135,13 @@
   font-weight: 700;
 }
 
+.footer-divider-img {
+  width: 100%;
+  max-width: 350px;
+  margin: 20px auto;
+  display: block;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .footer {

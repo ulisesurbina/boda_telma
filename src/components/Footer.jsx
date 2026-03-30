@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/Footer.css';
+import boda6 from "../assets/boda6.jpg";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -17,7 +18,11 @@ const Footer = () => {
           
           <p className="footer-author">— Antoine de Saint-Exupéry</p>
           
-          <div className="footer-divider"></div>
+          <img 
+            src={boda6} 
+            alt="Decoración" 
+            className="footer-divider-img"
+          />
           
           <div className="footer-names">
             <span>Telma</span>

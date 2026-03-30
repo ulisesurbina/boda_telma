@@ -6,6 +6,7 @@
   position: relative;
   background: linear-gradient(135deg, var(--color-white) 0%, var(--color-rose-light) 100%);
   overflow: hidden;
+  padding-top: 2rem !important;
 }
 
 .hero-pattern {
@@ -91,6 +92,13 @@
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+.hero-banner {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  display: block;
 }
 
 .hero-names {
@@ -215,7 +223,7 @@
 
 @media (max-width: 768px) {
   .hero-image-wrapper {
-    height: 300px;
+    height: 400px;
     width: auto;
   }
 
@@ -234,12 +242,24 @@
   .countdown-separator {
     font-size: 1.5rem;
   }
+
+  .hero {
+    padding-top: 2rem !important;
+  }
+
+  .hero-banner {
+    max-width: 90%;
+  }
 }
 
 @media (max-width: 480px) {
   .hero-image-wrapper {
-    height: 350px;
+    height: 430px;
     width: auto;
+  }
+
+  .hero {
+    padding-top: 2rem !important;
   }
 
   .hero-names {

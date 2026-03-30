@@ -27,7 +27,7 @@ const GiftRegistry = () => {
         <h2 className="section-title">Mesa de Regalos</h2>
         <div className="registry-intro">
           <p className="registry-message">
-            Tu presencia es nuestro mejor regalo <br />
+            Tu presencia es nuestro mejor regalo. <br />
             Si deseas hacernos un obsequio, hemos creado mesas de regalos en las siguientes tiendas. 
             Tu generosidad nos ayudará a comenzar nuestra vida juntos con todo lo que necesitamos 
             para hacer de nuestra casa un hogar lleno de amor.

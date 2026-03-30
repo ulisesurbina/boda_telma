@@ -4,7 +4,6 @@ import "../styles/Gallery.css";
 import boda1 from "../assets/boda15.jpg";
 import boda2 from "../assets/boda4.jpg";
 import boda4 from "../assets/boda10.jpg";
-import boda6 from "../assets/boda6.jpg";
 import boda7 from "../assets/boda7.jpg";
 import boda8 from "../assets/boda8.jpg";
 import boda9 from "../assets/boda2.jpg";
@@ -25,7 +24,6 @@ const Gallery = () => {
     boda1,
     boda2,
     boda4,
-    boda6,
     boda7,
     boda8,
     boda9,
