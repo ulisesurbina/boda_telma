@@ -108,7 +108,7 @@
 }
 
 .gallery-image:not(.loaded) {
-  opacity: 0;
+  opacity: 1;
 }
 
 .gallery-skeleton {
@@ -133,15 +133,10 @@
 .gallery-overlay {
   position: absolute;
   inset: 0;
-  opacity: 0;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.05));
   transition: opacity 0.4s ease;
   -webkit-transition: opacity 0.4s ease;
   -moz-transition: opacity 0.4s ease;
   -ms-transition: opacity 0.4s ease;
   -o-transition: opacity 0.4s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
 }

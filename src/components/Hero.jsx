@@ -1,20 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/Hero.css';
-import boda22 from '../assets/boda22.png';
-import bannerSec from '../assets/bannerSecundario.png';
+import React, { useState, useEffect } from "react";
+import "../styles/Hero.css";
+import boda22 from "../assets/boda22.png";
+import bannerSec from "../assets/bannerSecundario.png";
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
-  const weddingDate = new Date('2026-05-16T15:00:00');
+  const weddingDate = new Date("2026-05-16T15:00:00");
   // const brideName = 'Telma';
   // const groomName = 'Mauricio';
-  
+
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
     minutes: 0,
-    seconds: 0
+    seconds: 0,
   });
+
+  const scrollToForm = () => {
+    const section = document.getElementById("rsvp");
+    section?.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const calculateTimeLeft = () => {
@@ -24,7 +29,7 @@ const Hero = () => {
           days: Math.floor(difference / (1000 * 60 * 60 * 24)),
           hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
           minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60)
+          seconds: Math.floor((difference / 1000) % 60),
         });
       }
     };
@@ -39,10 +44,10 @@ const Hero = () => {
       <div className="hero-pattern"></div>
       <div className="hero-content container">
         <div className="hero-image-wrapper fade-in delay-1">
-          <img 
+          <img
             src={boda22}
             alt="Telma y Mauricio"
-            className={`hero-image ${loaded ? 'loaded' : 'skeleton'}`}
+            className={`hero-image ${loaded ? "loaded" : "skeleton"}`}
             onLoad={() => setLoaded(true)}
           />
           <div className="hero-image-overlay"></div>
@@ -52,7 +57,7 @@ const Hero = () => {
           {/* <div className="hero-ornament fade-in-up delay-2">
             <img src={logo} alt="Save the date" className="ornament-image" />
           </div> */}
-          
+
           {/* <h1 className="hero-names fade-in-up delay-3">
             <span className="bride-name">{brideName}</span>
             <span className="ampersand">&</span>
@@ -69,7 +74,6 @@ const Hero = () => {
             className="hero-banner fade-in-up delay-3"
           />
 
-
           <div className="hero-divider fade-in delay-5"></div>
 
           <div className="countdown fade-in-up delay-6">
@@ -79,17 +83,23 @@ const Hero = () => {
             </div>
             <div className="countdown-separator">:</div>
             <div className="countdown-item">
-              <span className="countdown-number">{String(timeLeft.hours).padStart(2, '0')}</span>
+              <span className="countdown-number">
+                {String(timeLeft.hours).padStart(2, "0")}
+              </span>
               <span className="countdown-label">Horas</span>
             </div>
             <div className="countdown-separator">:</div>
             <div className="countdown-item">
-              <span className="countdown-number">{String(timeLeft.minutes).padStart(2, '0')}</span>
+              <span className="countdown-number">
+                {String(timeLeft.minutes).padStart(2, "0")}
+              </span>
               <span className="countdown-label">Min</span>
             </div>
             <div className="countdown-separator">:</div>
             <div className="countdown-item">
-              <span className="countdown-number">{String(timeLeft.seconds).padStart(2, '0')}</span>
+              <span className="countdown-number">
+                {String(timeLeft.seconds).padStart(2, "0")}
+              </span>
               <span className="countdown-label">Seg</span>
             </div>
           </div>
@@ -97,6 +107,13 @@ const Hero = () => {
           <p className="hero-subtitle fade-in-up delay-7">
             Nos casamos y queremos celebrarlo contigo
           </p>
+
+          <button
+            className="btn heroBtn btn-primary hero-btn fade-in-up delay-8"
+            onClick={scrollToForm}
+          >
+            Confirmar asistencia
+          </button>
         </div>
       </div>
 

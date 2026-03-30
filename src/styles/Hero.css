@@ -206,8 +206,17 @@
   height: 24px;
   border-left: 2px solid var(--color-red-deep);
   border-bottom: 2px solid var(--color-red-deep);
-  transform: rotate(-45deg);
   animation: float 2s ease-in-out infinite;
+  -webkit-animation: float 2s ease-in-out infinite;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.heroBtn {
+  margin-top: var(--spacing-md);
 }
 
 /* Responsive */

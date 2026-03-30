@@ -55,7 +55,15 @@
     width: 50%;
     display: flex;
     margin: 0 auto;
+    animation: floatIcon 4s ease-in-out infinite;
+    -webkit-animation: floatIcon 4s ease-in-out infinite;
   }
+}
+
+@keyframes floatIcon {
+  0% { transform: translateY(0px); -webkit-transform: translateY(0px); -moz-transform: translateY(0px); -ms-transform: translateY(0px); -o-transform: translateY(0px); }
+  50% { transform: translateY(-10px); -webkit-transform: translateY(-10px); -moz-transform: translateY(-10px); -ms-transform: translateY(-10px); -o-transform: translateY(-10px); }
+  100% { transform: translateY(0px); -webkit-transform: translateY(0px); -moz-transform: translateY(0px); -ms-transform: translateY(0px); -o-transform: translateY(0px); }
 }
 
 .venue-content {

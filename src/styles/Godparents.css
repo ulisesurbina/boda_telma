@@ -22,6 +22,8 @@
   margin-top: 30px;
   display: flex;
   justify-content: center;
+  overflow: hidden;
+  border-radius: 20px;
 }
 
 .dresscode-image-wrapper img {
@@ -30,6 +32,14 @@
   object-fit: cover;
   filter: drop-shadow(0 10px 25px rgba(0,0,0,0.1));
   -webkit-filter: drop-shadow(0 10px 25px rgba(0,0,0,0.1));
+  animation: floatDress 5s ease-in-out infinite;
+  -webkit-animation: floatDress 5s ease-in-out infinite;
+}
+
+@keyframes floatDress {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
 }
 
 .godparent-card {
