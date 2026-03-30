@@ -6,7 +6,7 @@ const Dresscode = () => {
 
   return (
     <section className="godparents floral-container" id="padrinos">
-      <div className="container">
+      <div className="container margenRed">
         <h2 className="section-title">Código de Vestimenta</h2>
         <p className="section-subtitle">Se sugiere vestimenta formal</p>
         <p className="section-subtitle">Mujeres no usar color blanco o rojo (Únicamente damas)</p>

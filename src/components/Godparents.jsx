@@ -1,6 +1,5 @@
 import React from 'react';
 import '../styles/Godparents.css';
-import margen from '../assets/margen.png';
 
 const Godparents = () => {
   const godparents = [
@@ -26,7 +25,7 @@ const Godparents = () => {
 
   return (
     <section className="godparents floral-container" id="padrinos">
-      <div className="container">
+      <div className="container margenRed">
 
         <div className="godparents-box">
 
