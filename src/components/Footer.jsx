@@ -12,7 +12,7 @@ const Footer = () => {
           <div className="footer-ornament">❦</div>
           
           <p className="footer-quote">
-            "Todos nacemos ciegos, hasta que conocemos a algien que le da sentido a nuestra vista"
+            "Todos nacemos ciegos, hasta que conocemos a alguien que le da sentido a nuestra vista"
           </p>
           
           <img 
