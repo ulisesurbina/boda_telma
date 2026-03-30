@@ -12,11 +12,8 @@ const Footer = () => {
           <div className="footer-ornament">❦</div>
           
           <p className="footer-quote">
-            "El amor no consiste en mirarse el uno al otro, 
-            sino en mirar juntos en la misma dirección."
+            "Todos nacemos ciegos, hasta que conocemos a algien que le da sentido a nuestra vista"
           </p>
-          
-          <p className="footer-author">— Antoine de Saint-Exupéry</p>
           
           <img 
             src={boda6} 

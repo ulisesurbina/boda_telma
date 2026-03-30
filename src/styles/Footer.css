@@ -43,14 +43,6 @@
   font-weight: 300;
 }
 
-.footer-author {
-  font-family: var(--font-accent);
-  font-size: 1rem;
-  color: var(--color-text-gray);
-  letter-spacing: 1px;
-  margin-bottom: var(--spacing-md);
-}
-
 .footer-divider {
   width: 100px;
   height: 2px;
