@@ -8,7 +8,7 @@ const CoupleDetails = () => {
       <div className="container margenRed">
         <h2 className="section-title">Nosotros</h2>
         <p className="section-subtitle">
-          Quienes se unen en matrimonio
+          Quienes nos unimos en matrimonio
         </p>
 
         <div className="couple-unified-card">

@@ -4,7 +4,7 @@ import '../styles/Godparents.css';
 const Godparents = () => {
   const godparents = [
     { 
-      names: ['Remedios Tlatuani Gómez', 'Felipe Francisco Hernández Suárez'], 
+      names: ['Remedios Tlatuani Gómez &', 'Felipe Francisco Hernández Suárez'], 
       relation: 'Padrinos de Velación', 
       side: 'groom' 
     }
@@ -12,7 +12,7 @@ const Godparents = () => {
 
   const parents = [
     { 
-      names: ['Mónica Tlatuani Gómez', 'Juan Manuel Casas Sánchez'], 
+      names: ['Mónica Tlatuani Gómez &', 'Juan Manuel Casas Sánchez'], 
       relation: 'Padres de la Novia', 
       side: 'bride' 
     },
