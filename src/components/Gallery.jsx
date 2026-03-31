@@ -114,7 +114,7 @@ const Gallery = () => {
             );
           })}
         </div>
-        {isMobile && visibleCount < images.length && (
+        {/* {isMobile && visibleCount < images.length && (
           <div className="gallery-button-container">
             <button
               className="btn btn-primary"
@@ -123,7 +123,7 @@ const Gallery = () => {
               Ver más
             </button>
           </div>
-        )}
+        )} */}
       </div>
     </section>
   );
