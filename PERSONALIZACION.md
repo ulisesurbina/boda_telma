@@ -25,7 +25,7 @@ const brideInfo = {
 };
 
 const groomInfo = {
-  name: 'Mauricio Andres Umaña Parrondo',  // ⬅️ NOMBRE COMPLETO
+  name: 'Mauricio Andrés Umaña Parrondo',  // ⬅️ NOMBRE COMPLETO
   bio: 'Tu biografía aquí...'  // ⬅️ BIOGRAFÍA DEL NOVIO
 };
 ```
@@ -198,15 +198,15 @@ Crea la carpeta `public/images/` y organiza así:
 ```
 public/
 └── images/
-    ├── hero-main.jpg
-    ├── our-story.jpg
-    ├── bride.jpg
-    ├── groom.jpg
-    ├── ceremony-venue.jpg
-    ├── reception-venue.jpg
+    ├── hero-main.webp
+    ├── our-story.webp
+    ├── bride.webp
+    ├── groom.webp
+    ├── ceremony-venue.webp
+    ├── reception-venue.webp
     └── gallery/
-        ├── photo-1.jpg
-        ├── photo-2.jpg
+        ├── photo-1.webp
+        ├── photo-2.webp
         └── ...
 ```
 
@@ -216,7 +216,7 @@ public/
 ```jsx
 // Reemplazar línea 23-24
 <img 
-  src="/images/hero-main.jpg" 
+  src="/images/hero-main.webp" 
   alt="Boda Telma y Mauricio" 
   className="hero-image" 
 />
@@ -226,7 +226,7 @@ public/
 ```jsx
 // Reemplazar línea 40
 <img 
-  src="/images/our-story.jpg" 
+  src="/images/our-story.webp" 
   alt="Nuestra Historia" 
   className="story-image" 
 />
@@ -236,14 +236,14 @@ public/
 ```jsx
 // Para la novia (línea 26)
 <img 
-  src="/images/bride.jpg" 
+  src="/images/bride.webp" 
   alt="Telma" 
   className="couple-image" 
 />
 
 // Para el novio (línea 45)
 <img 
-  src="/images/groom.jpg" 
+  src="/images/groom.webp" 
   alt="Mauricio" 
   className="couple-image" 
 />
@@ -253,14 +253,14 @@ public/
 ```jsx
 // Ceremonia (línea 38)
 <img 
-  src="/images/ceremony-venue.jpg" 
+  src="/images/ceremony-venue.webp" 
   alt="Lugar de ceremonia" 
   className="venue-image" 
 />
 
 // Recepción (línea 69)
 <img 
-  src="/images/reception-venue.jpg" 
+  src="/images/reception-venue.webp" 
   alt="Lugar de recepción" 
   className="venue-image" 
 />
@@ -272,7 +272,7 @@ public/
 {images.map((image, index) => (
   <div key={index} className={`gallery-item item-${index + 1}`}>
     <img 
-      src={`/images/gallery/photo-${index + 1}.jpg`} 
+      src={`/images/gallery/photo-${index + 1}.webp`} 
       alt={`Foto ${index + 1}`} 
       className="gallery-image" 
     />

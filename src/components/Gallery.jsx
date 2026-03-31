@@ -1,23 +1,23 @@
 import React, { useState } from "react";
 import "../styles/Gallery.css";
 
-import boda1 from "../assets/boda15.jpg";
-import boda2 from "../assets/boda4.jpg";
-import boda4 from "../assets/boda10.jpg";
-import boda7 from "../assets/boda7.jpg";
-import boda8 from "../assets/boda8.jpg";
-import boda9 from "../assets/boda2.jpg";
-import boda10 from "../assets/boda9.jpg";
-import boda11 from "../assets/boda11.jpg";
-import boda13 from "../assets/boda13.jpg";
-import boda14 from "../assets/boda14.jpg";
-import boda15 from "../assets/boda1.jpg";
-import boda16 from "../assets/boda16.jpg";
-import boda17 from "../assets/boda17.jpg";
-import boda18 from "../assets/boda18.jpg";
-import boda19 from "../assets/boda19.jpg";
-import boda20 from "../assets/boda20.jpg";
-import boda21 from "../assets/boda21.jpg";
+import boda1 from "../assets/boda19.webp";
+import boda2 from "../assets/boda4.webp";
+import boda4 from "../assets/boda10.webp";
+import boda7 from "../assets/boda7.webp";
+import boda8 from "../assets/boda8.webp";
+import boda9 from "../assets/boda2.webp";
+import boda10 from "../assets/boda9.webp";
+import boda11 from "../assets/boda11.webp";
+import boda13 from "../assets/boda13.webp";
+import boda14 from "../assets/boda14.webp";
+import boda15 from "../assets/boda1.webp";
+import boda16 from "../assets/boda16.webp";
+import boda17 from "../assets/boda17.webp";
+import boda18 from "../assets/boda18.webp";
+import boda19 from "../assets/boda21.webp";
+import boda20 from "../assets/boda20.webp";
+import boda21 from "../assets/boda15.webp";
 
 const Gallery = () => {
   const images = [

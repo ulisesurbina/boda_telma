@@ -117,7 +117,7 @@ Actualmente, todas las imágenes usan skeletons animados. Para agregar imágenes
 <div className="hero-image skeleton"></div>
 
 // Por esto:
-<img src="/images/hero-image.jpg" alt="Boda" className="hero-image" />
+<img src="/images/hero-image.webp" alt="Boda" className="hero-image" />
 ```
 
 ### Imágenes Recomendadas

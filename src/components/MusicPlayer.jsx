@@ -21,23 +21,18 @@ const MusicPlayer = () => {
   };
 
   useEffect(() => {
-    const handleFirstInteraction = () => {
-      if (audioRef.current && !isPlaying) {
-        audioRef.current.play().then(() => {
-          setIsPlaying(true);
-        }).catch(() => {
-        });
+    const handleLoad = () => {
+    if (audioRef.current) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(err => console.log('Autoplay bloqueado:', err));
       }
-      document.removeEventListener('click', handleFirstInteraction);
-      document.removeEventListener('touchstart', handleFirstInteraction);
     };
 
-    document.addEventListener('click', handleFirstInteraction);
-    document.addEventListener('touchstart', handleFirstInteraction);
+    window.addEventListener('load', handleLoad);
 
     return () => {
-      document.removeEventListener('click', handleFirstInteraction);
-      document.removeEventListener('touchstart', handleFirstInteraction);
+      window.removeEventListener('load', handleLoad);
     };
   }, []);
 
@@ -46,7 +41,9 @@ const MusicPlayer = () => {
       <audio
         ref={audioRef}
         loop
-        preload="metadata"
+        // preload="metadata"
+        preload="auto"
+        autoPlay
       >
         <source src="/audio/paraiso-lunar.mp3" type="audio/mpeg" />
         Tu navegador no soporta el elemento de audio.

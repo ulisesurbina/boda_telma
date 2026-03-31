@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/CoupleDetails.css';
-import boda5 from '../assets/boda5.jpg';
+import boda5 from '../assets/boda5.webp';
 
 const CoupleDetails = () => {
   return (
@@ -33,7 +33,7 @@ const CoupleDetails = () => {
               <div className="heart-divider">♥</div>
 
               <h3 className="groom-name">
-                Mauricio Andres Umaña Parrondo
+                Mauricio Andrés Umaña Parrondo
               </h3>
 
               <p className="couple-message">

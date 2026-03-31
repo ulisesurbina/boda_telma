@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/Footer.css';
-import boda6 from "../assets/boda6.jpg";
+import boda6 from "../assets/boda6.webp";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

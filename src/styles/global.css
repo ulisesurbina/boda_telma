@@ -54,7 +54,7 @@ body {
 
 .floral-container {
   border: 40px solid transparent;
-  border-image: url('../assets/marco.JPG') 100 round;
+  border-image: url('../assets/marco.webp') 100 round;
   padding: 20px;
 }
 

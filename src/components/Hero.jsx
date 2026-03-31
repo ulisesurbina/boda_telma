@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Hero.css";
-import boda22 from "../assets/boda22.png";
-import bannerSec from "../assets/bannerSecundario.png";
+import boda22 from "../assets/boda22.webp";
+import bannerSec from "../assets/bannerSecundario.webp";
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
