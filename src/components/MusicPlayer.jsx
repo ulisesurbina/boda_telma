@@ -4,91 +4,52 @@ import '../styles/MusicPlayer.css';
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [isMuted, setIsMuted] = useState(true);
-
   const audioRef = useRef(null);
 
-  // ▶️ Intentar autoplay al cargar
-  useEffect(() => {
-    const audio = audioRef.current;
-
-    if (audio) {
-      audio.muted = true; // necesario para autoplay en móviles
-
-      const playPromise = audio.play();
-
-      if (playPromise !== undefined) {
-        playPromise
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch(() => {
-            // El navegador bloqueó autoplay (normal)
-          });
-      }
-    }
-  }, []);
-
-  // 👆 Primera interacción → activar sonido
-  useEffect(() => {
-    const enableSound = () => {
-      const audio = audioRef.current;
-
-      if (audio) {
-        audio.muted = false;
-        setIsMuted(false);
-
-        audio.play()
-          .then(() => {
-            setIsPlaying(true);
-          })
-          .catch(() => {});
-      }
-
-      document.removeEventListener('click', enableSound);
-      document.removeEventListener('touchstart', enableSound);
-    };
-
-    document.addEventListener('click', enableSound);
-    document.addEventListener('touchstart', enableSound);
-
-    return () => {
-      document.removeEventListener('click', enableSound);
-      document.removeEventListener('touchstart', enableSound);
-    };
-  }, []);
-
-  // 🎵 Play / Pause manual
+  // Toggle reproducción
   const togglePlay = () => {
-    const audio = audioRef.current;
-
-    if (!audio) return;
-
-    if (isPlaying) {
-      audio.pause();
-      setIsPlaying(false);
-    } else {
-      audio.muted = false;
-      audio.play();
-      setIsMuted(false);
-      setIsPlaying(true);
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play().catch(err => {
+          console.log('Autoplay prevented:', err);
+        });
+      }
+      setIsPlaying(!isPlaying);
     }
   };
 
+  useEffect(() => {
+    const handleLoad = () => {
+    if (audioRef.current) {
+        audioRef.current.play()
+          .then(() => setIsPlaying(true))
+          .catch(err => console.log('Autoplay bloqueado:', err));
+      }
+    };
+
+    window.addEventListener('load', handleLoad);
+
+    return () => {
+      window.removeEventListener('load', handleLoad);
+    };
+  }, []);
+
   return (
     <div className={`music-player ${isVisible ? 'visible' : 'hidden'}`}>
-      
       <audio
         ref={audioRef}
         loop
+        // preload="metadata"
         preload="auto"
-        playsInline
+        autoPlay
       >
         <source src="/audio/paraiso-lunar.mp3" type="audio/mpeg" />
-        Tu navegador no soporta el audio.
+        Tu navegador no soporta el elemento de audio.
       </audio>
 
-      <button
+      <button 
         className={`music-toggle ${isPlaying ? 'playing' : ''}`}
         onClick={togglePlay}
         aria-label={isPlaying ? 'Pausar música' : 'Reproducir música'}
@@ -103,7 +64,7 @@ const MusicPlayer = () => {
             <div className="play-triangle"></div>
           )}
         </div>
-
+        
         {isPlaying && (
           <div className="sound-waves">
             <span className="wave"></span>
@@ -116,7 +77,6 @@ const MusicPlayer = () => {
       <div className="music-info">
         <div className="song-title">Paraíso Lunar</div>
         <div className="artist-name">Siddhartha</div>
-        {isMuted && <div className="muted-label">Tap para activar sonido 🔊</div>}
       </div>
     </div>
   );
