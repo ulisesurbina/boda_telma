@@ -12,9 +12,17 @@ import GiftRegistry from './components/GiftRegistry';
 import Register from './components/Register';
 import Footer from './components/Footer';
 import './styles/global.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
-  // Intersection Observer para animaciones al hacer scroll
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      easing: "ease-out-cubic",
+    });
+  }, []);
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,

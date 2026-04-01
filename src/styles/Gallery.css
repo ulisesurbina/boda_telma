@@ -7,7 +7,30 @@
   position: relative;
 }
 
-/* 🔥 GRID MÁS EFICIENTE */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* altura base */
+  min-height: 300px;
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+/* 🔥 GRID */
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -27,41 +50,32 @@
   }
 }
 
-/* 📱 Botón */
-.gallery-button-container {
-  text-align: center;
-  margin-top: 20px;
-  padding: 1rem;
-}
-
-@media (min-width: 768px) {
-  .gallery-button-container {
-    display: none;
-  }
-}
-
 /* 🔥 ITEM */
 .gallery-item {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+
+  /* mejora performance */
   contain: content;
 }
 
-/* 🔥 ELIMINAMOS spans pesados en mobile */
+/* 🔥 Distribución tipo masonry ligera (solo desktop) */
 @media (min-width: 601px) {
+  .gallery-item {
+    grid-row: span 3;
+  }
+
   .gallery-item.item1 {
     grid-row: span 3;
   }
+
   .gallery-item.item2 {
     grid-row: span 2;
   }
+
   .gallery-item.item19 {
     grid-row: span 4;
-  }
-
-  .gallery-item {
-    grid-row: span 3;
   }
 }
 
@@ -72,32 +86,23 @@
   }
 }
 
-/* 🔥 IMAGEN OPTIMIZADA */
+/* 🔥 IMAGEN */
 .gallery-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  will-change: transform, opacity;
-  transition: transform 0.4s ease, opacity 0.3s ease;
-  -webkit-transition: transform 0.4s ease, opacity 0.3s ease;
-  -moz-transition: transform 0.4s ease, opacity 0.3s ease;
-  -ms-transition: transform 0.4s ease, opacity 0.3s ease;
-  -o-transition: transform 0.4s ease, opacity 0.3s ease;
+
+  /* animación optimizada */
+  transition: transform 0.4s ease;
+
+  /* GPU acceleration (más limpio) */
   transform: translateZ(0);
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
 }
 
 /* SOLO hover en desktop */
 @media (hover: hover) {
   .gallery-item:hover .gallery-image {
     transform: scale(1.05);
-    -webkit-transform: scale(1.05);
-    -moz-transform: scale(1.05);
-    -ms-transform: scale(1.05);
-    -o-transform: scale(1.05);
   }
 }
 
@@ -105,46 +110,10 @@
 @media (hover: none) {
   .gallery-item:hover .gallery-image {
     transform: none;
-    -webkit-transform: none;
-    -moz-transform: none;
-    -ms-transform: none;
-    -o-transform: none;
-}
-}
-
-/* 🔥 LOAD */
-.gallery-image.loaded {
-  opacity: 1;
-}
-
-.gallery-image:not(.loaded) {
-  opacity: 0;
-}
-
-/* 🔥 SKELETON MÁS LIGERO */
-.gallery-skeleton {
-  position: absolute;
-  inset: 0;
-  background: #eee;
-  z-index: 1;
-  /*⚡animaciónmásligera*/
-  animation: skeleton-loading 1.5s infinite linear;
-  -webkit-animation: skeleton-loading 1.5s infinite linear;
-}
-
-@keyframes skeleton-loading {
-  0% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0.6;
   }
 }
 
-/* 🔥 OVERLAY MÁS LIGERO */
+/* 🔥 OVERLAY (ligero) */
 .gallery-overlay {
   position: absolute;
   inset: 0;
@@ -153,6 +122,5 @@
     rgba(0, 0, 0, 0.25),
     rgba(0, 0, 0, 0.05)
   );
-
   pointer-events: none;
 }

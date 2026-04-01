@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import "../styles/Gallery.css";
+
 
 import boda1 from "../assets/boda19.webp";
 import boda2 from "../assets/boda4.webp";
@@ -20,6 +21,12 @@ import boda20 from "../assets/boda20.webp";
 import boda21 from "../assets/boda15.webp";
 
 const Gallery = () => {
+  useEffect(() => {
+    images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
   const images = [
     boda1,
     boda2,
@@ -37,93 +44,28 @@ const Gallery = () => {
     boda18,
     boda19,
     boda20,
-    boda21
+    boda21,
   ];
-
-  const [loaded, setLoaded] = useState({});
-  const [visibleCount, setVisibleCount] = useState(4);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
-  const [showAll, setShowAll] = useState(false);
-
-  const observer = useRef();
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 600);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const lastImageRef = (node) => {
-    if (observer.current) observer.current.disconnect();
-
-    observer.current = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting) {
-        setVisibleCount((prev) => {
-          if (prev >= images.length) return prev;
-          return prev + 4;
-        });
-      }
-    });
-
-    if (node) observer.current.observe(node);
-  };
-
-  const visibleImages = images.slice(0, visibleCount);
-
-  const handleImageLoad = (index) => {
-    setLoaded((prev) => ({ ...prev, [index]: true }));
-  };
 
   return (
     <section className="gallery floral-container" id="galeria">
-      <div className="container margenRed">
+      <div className="container">
         <h2 className="section-title">Galería</h2>
         <p className="section-subtitle">Momentos que atesoramos</p>
 
         <div className="gallery-grid">
-          {visibleImages.map((img, index) => {
-            const isLast = index === visibleImages.length - 1;
-
-            return (
-              <div
-                ref={isLast ? lastImageRef : null}
-                key={index}
-                className={`gallery-item item${index + 1}`}
-              >
-                {!loaded[index] && (
-                  <div className="gallery-skeleton"></div>
-                )}
-
-                <img
-                  src={img}
-                  alt={`Foto boda ${index + 1}`}
-                  className={`gallery-image ${
-                    loaded[index] ? "loaded" : ""
-                  }`}
-                  onLoad={() => handleImageLoad(index)}
-                  loading="lazy"
-                  width="300"
-                  height="400"
-                />
-
-                <div className="gallery-overlay"></div>
-              </div>
-            );
-          })}
-        </div>
-        {/* {isMobile && visibleCount < images.length && (
-          <div className="gallery-button-container">
-            <button
-              className="btn btn-primary"
-              onClick={() => setVisibleCount((prev) => prev + 4)}
+          {images.map((img, index) => (
+            <div
+              key={index}
+              className={`gallery-item item${index + 1}`}
+              style={{ backgroundImage: `url(${img})` }}
+              data-aos="zoom-in"
+              data-aos-delay={index * 100}
             >
-              Ver más
-            </button>
-          </div>
-        )} */}
+              <div className="gallery-overlay"></div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
