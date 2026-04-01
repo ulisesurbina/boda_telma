@@ -9,7 +9,7 @@ const Dresscode = () => {
       <div className="container margenRed">
         <h2 className="section-title">Código de Vestimenta</h2>
         <p className="section-subtitle">Se sugiere vestimenta formal</p>
-        <p className="section-subtitle">Mujeres no usar color blanco o rojo (Únicamente damas)</p>
+        <p className="section-subtitle">Mujeres no usar color blanco o rojo</p>
         <div className="dresscode-image-wrapper">
           <img src={dresscode} alt="Código de vestimenta" />
         </div>
